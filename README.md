@@ -11,3 +11,5 @@ It admits data input in the following format: xxx.xxx.xxx.xxx/xx, and it returns
 - Maximum number of posible networks: will be '1' if segmentation is not possible.
 - Maximun number of hosts per subnetwork.
 - Length of bits for networks, subnetwork and hosts addresses.
+
+Error handling penddind to be added
