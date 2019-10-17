@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <script src="functions.js"></script>
+    <script src="main.js"></script>
+    <script src="create_txt.js"></script>
+    <title>El analizador</title>
+</head>
+<body>
+    <div id="contenido">
+        <banner>
+            <p>
+                El analizador. Cálculo de redes.
+            </p>
+        </banner>
+        <p>
+            Este pequeño programa analiza una dirección IP que se introduce seguida de la máscara de subred, con el 
+            formato xxx.xxx.xxx.xxx/xx, estando xxx entre 0 y 255 (ambos inclusive), y xx entre 1 y 31 (ambos inclusive).
+        </p>
+        <div>
+            <label>Dirección IP: </label>
+            <input id="ip" class="ip" type="text" size="14" maxlength="18" onkeyup="checkInput()">
+        </div>
+        <div>
+            <input id="calcular" class="button" type="submit" value="Calcular" onclick="checkForm()">
+            <input id="boton" class="button" type="button" value="Limpiar" onclick="resetForm()">
+        </div>
+        <div id="analisis" hidden>
+        </div>
+        <div id="analisis2" hidden>
+        </div>
+    </div>
+</body>
+</html>
