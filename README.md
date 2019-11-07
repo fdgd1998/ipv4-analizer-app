@@ -12,5 +12,4 @@ It admits data input in the following format: xxx.xxx.xxx.xxx/xx, and it returns
 - Maximun number of hosts per subnetwork.
 - Length of bits for networks, subnetwork and hosts addresses.
 
-Error handling penddind to be added.
 This app will be written in Python, Java and PHP as future projects.
