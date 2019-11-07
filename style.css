@@ -1,0 +1,62 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial;
+}
+#contenido, footer {
+    width: 40%;
+    margin: auto;
+    margin-top: 2%;
+    text-align: justify;
+}
+ .ip {
+     display: inline;
+ }
+ input {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+ }
+ banner {
+     color: lime;
+     font-weight: bold;
+     font-size: 1.1em;
+ }
+ div {
+     margin-top: 1%;
+     margin-bottom: 1%;
+ }
+ .button input:hover {
+     color: red;
+     border-bottom: 1px solid red;
+ }
+ a:visited {color:red}
+ a:hover {color: lightblue}
+ a {color: red;}
+.button {
+     float: right;
+     margin: .5%;
+ }
+ .tipo_mascara {
+     color: white;
+     size: .5em;
+ }
+ label {
+    margin-top: 1%;
+    margin-bottom: 1%;
+ }
+input {
+    text-align: center;
+}
+#analisis, #analisis2 {
+    margin-top: 2%;
+    padding: 1%;
+}
+#ip:focus {
+    outline-width: 0;
+}
+
+footer {
+    padding-top: 1%;
+    text-align: right;
+}

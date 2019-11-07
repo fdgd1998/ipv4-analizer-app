@@ -6,7 +6,7 @@ function obtainIpMask () {
     return [arr, mask]  
 }
 function IpClass (oct1) {
-    var clase
+    var clase = ""
     if (oct1 >= 0 && oct1 <= 127) {
         clase = "A"
     } else if (oct1 >= 128 && oct1 <= 191) {
@@ -15,7 +15,7 @@ function IpClass (oct1) {
                 clase = "C"
             } else if (oct1 >= 224 && oct1 <= 239) {
                     clase = "D"
-                } else if (oct1 >= 240 && oct1 <= 255) {
+                } else if (oct1 >= 240 && oct1 <= 253) {
                         clase = "E"
                     }
     return clase

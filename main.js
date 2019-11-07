@@ -38,7 +38,6 @@ function printData (tipoip, mask, network, bits, broadcast, subnetted, clase, nh
     for(var i = 0; i < p.length; i++) {
       docFrag.appendChild(p[i]);
     }
-    //obtain_variables(tipoip, mask, network, bits, broadcast, subnetted, clase, nhosts, havemask, nsubredes)
     analisis.appendChild(docFrag)
     analisis.removeAttribute("hidden")
     analisis2.removeAttribute("hidden")
@@ -88,41 +87,23 @@ function main (ip, mask) {
             } else mask = "No se puede calcular"
         }
     }
-    printData(tipoip, mask, netaddress, bits, broadcast, subnetted, clase, nhosts, haveMask,nsubredes)
+    printData(tipoip, mask, netaddress, bits, broadcast, subnetted, clase, nhosts, haveMask, nsubredes)
 }
 function checkForm() {
     var ipAndMask = obtainIpMask()
     var ip = ipAndMask[0]
     var mask = ipAndMask[1]
-    var errorcount = 0, printerror = []
-    console.log(ip)
-    if (ip[0] < 0 || ip[0] > 255 || ip[0] == undefined) {
-        printerror[0] = "El valor del primer octeto no está dentro del rango válido (0-255)."
-        errorcount++
-    }
-    if (ip[1] < 0 || ip[1] > 255 || ip[1] == undefined) {
-        printerror[1] = "El valor del segundo octeto no está dentro del rango válido (0-255)."
-        errorcount++
-    }
-    if (ip[2] < 0 || ip[2] > 255 || ip[2] == undefined) {
-        printerror[2] = "El valor del tercer octeto no está dentro del rango válido (0-255)."
-        errorcount++
-    }
-    if (ip[3] < 0 || ip[3] > 255 || ip[3] == undefined) {
-        printerror[3] = "El valor del cuarto octeto no está dentro del rango válido (0-255)."
-        errorcount++
-    }
-    if (mask < 1 || mask > 32 || mask == undefined) {
-        printerror[4] = "La máscara de subred no está dentro del rango válido (1-31)."
-        errorcount++
-    }
-    if (errorcount == 0) main(ip, mask)
-    else {
-        for (i = 0; i < 5; i++) {
-            var aux = printerror.join("\n")
-            aux = aux.replace(/undefined/g,"\0")
+
+    try {
+        for (var i = 0; i < ip.length; i++) {
+            if (ip[i] == undefined || isNaN(ip[i]) || ip[i] == "") throw "Formato de dirección IP no válido."
+            if (ip[i] < 0 || ip[i] > 255) throw "El valor de cada octeto debe estar en el rango 0-255."
         }
-            alert("Se han detectado "+errorcount+" errores"+aux)
+        if (mask == undefined || mask == "") throw "Formato de máscara de red no válido."
+        if (mask < 0 || mask > 31) throw "El valor de la mácara de red debe estar en el rango 0-255."
+        main(ip, mask)
+    } catch(err) {
+        alert(err)
     }
 }
 function checkInput() {
